@@ -39,11 +39,11 @@ def select_all_tweets(conn):
 def main():
     database = "/Applications/University/anaconda3\twitter.db"
  
-    # create a database connection
+# create a database connection
     conn = create_connection(database)
     with conn:
         
-        print("Query all tasks")
+        print("Tweets")
         select_all_tweets(conn)
  
  
