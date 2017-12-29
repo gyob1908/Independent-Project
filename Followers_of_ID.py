@@ -15,8 +15,8 @@ import datetime
 # Uses keys from APP setup to access Twitter Account information
 # Access Keys held in seperate folder
 
-auth = tweepy.OAuthHandler(AccessKeys.ConsumerKey, AccessKeys.ConsumerSecret)
-auth.set_access_token(AccessKeys.AccessToken, AccessKeys.AccessTokenSecret)
+auth = tweepy.OAuthHandler(ConsumerKey, ConsumerSecret)
+auth.set_access_token(AccessToken, AccessTokenSecret)
 
 # Establishes API through tweepy
 api = tweepy.API(auth)
