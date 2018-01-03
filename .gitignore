@@ -4,3 +4,5 @@ abcd.json
 TwitterStreamDB.db
 TwitterStreaming.py
 twitter.db
+__pycache__/AccessKeys.cpython-36.pyc
+NLTK.py

@@ -13,6 +13,7 @@ conn = sqlite3.connect('twitter.db')
 c = conn.cursor()
 c.execute('''CREATE TABLE tweets
     (tweetText text,
+    sentiment text,
     user text,
     followers integer,
     date text,
