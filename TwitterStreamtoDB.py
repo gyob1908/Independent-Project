@@ -16,6 +16,8 @@ import json
 import AccessKeys
 from textblob import TextBlob
 
+# Creates a table called Tweets in SQLite
+
 conn = sqlite3.connect('twitter.db')
 c = conn.cursor()
 c.execute('''CREATE TABLE tweets
@@ -47,7 +49,7 @@ c = conn.cursor()
 
 class Tweet():
 
-    # Data on the tweet
+    # Defines different parts of data on the tweet
     
     def __init__(self, text, sentiment, user, followers, date, location):
         self.text = text
@@ -66,7 +68,7 @@ class Tweet():
             (self.text, self.sentiment, self.user, self.followers, self.date, self.location))
         conn.commit()
         
-# Stream Listener class
+# Stream Listener class       
         
 class Listener(StreamListener):
 
@@ -78,22 +80,25 @@ class Listener(StreamListener):
         
         try:
 
-            # Convert to JSON
+            # Convert data to JSON format
             
             tweet = json.loads(data)
             
-            # Filter out retweets and quoted tweets
+            # Filter out retweets and quoted tweets to avoid duplication
             
             if not tweet['retweeted'] and 'RT @' not in tweet['text']:
 
-                # Get user via Tweepy so we can get their number of followers
+                # Get user via Tweepy so in order to obtain number of followers
+                
                 user_profile = api.get_user(tweet['user']['screen_name'])
 
                 # Perform sentiment analysis on tweet text
+                
                 analysis = TextBlob(tweet['text'])
             
                 
-                # assign all data to Tweet object
+                # Assign all data to Tweet object by splitting up data in to relevent catagories
+                
                 tweet_data = Tweet(
                     str(tweet['text'].encode('utf-8')),
                     str (analysis.sentiment),
@@ -104,10 +109,12 @@ class Listener(StreamListener):
 
                 
                 # Print tweet text and sentiment analysis for visual check
+                
                 print(tweet_data.text)
                 print (analysis.sentiment)
 
                 # Inserts tweet data into database
+                
                 tweet_data.insertTweet()
                 
 
