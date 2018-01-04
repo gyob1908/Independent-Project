@@ -6,7 +6,7 @@ Created on Sun Dec 17 13:29:31 2017
 @author: oliverbeatson
 """
 
-# This code returns past 15 tweets regarding the 3 string searches
+# This code returns limited number of tweets based on the 2 string searches
 
 # Import of necassary modules
 
@@ -23,7 +23,8 @@ auth.set_access_token(AccessKeys.AccessToken, AccessKeys.AccessTokenSecret)
 # Establishes API through tweepy
 api = tweepy.API(auth)
 
-# Searches for keyword 'Labour'
+# Searches for keyword 'Labour' in tweets
+# Perform sentiment analysis
 # Then prints results
 
 public_tweets = api.search(q="Labour")
@@ -33,7 +34,8 @@ for tweet in public_tweets:
     analysis = TextBlob(tweet.text)
     print (analysis.sentiment)
     
-# Searches for keyword 'Conservative'
+# Searches for keyword 'Conservative' in tweets
+# Perform sentiment analysis
 # Then prints results
 
 public_tweets = api.search(q="Conservative")
