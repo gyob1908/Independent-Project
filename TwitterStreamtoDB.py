@@ -5,7 +5,9 @@ Created on Fri Dec 29 08:54:28 2017
 
 @author: oliverbeatson
 """
-# Code adapted from http://www.davidrschuler.com/python_twitter_streaming/
+# Code adapted from - http://www.davidrschuler.com/python_twitter_streaming/
+#                   - http://tweepy.readthedocs.io/en/v3.5.0/
+#                   - http://textblob.readthedocs.io/en/dev/
 
 # Imports required libraries
 
@@ -88,7 +90,7 @@ class Listener(StreamListener):
             
             if not tweet['retweeted'] and 'RT @' not in tweet['text']:
 
-                # Get user via Tweepy so in order to obtain number of followers
+                # Get user via Tweepy in order to obtain number of followers
                 
                 user_profile = api.get_user(tweet['user']['screen_name'])
 
