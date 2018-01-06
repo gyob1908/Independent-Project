@@ -62,7 +62,7 @@ class Tweet():
         self.location = location
 
 
-    # Inserting the data into the DB
+    # Defines inserting the data into the DB
     
     def insertTweet(self):
 
