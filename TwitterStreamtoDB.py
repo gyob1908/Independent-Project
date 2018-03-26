@@ -47,6 +47,7 @@ api = tweepy.API(auth)
 conn = sqlite3.connect('twitter.db')
 c = conn.cursor()
 
+
 # Class for defining a Tweet
 
 class Tweet():
@@ -139,5 +140,4 @@ if __name__ == '__main__':
     
     stream.filter(track=['Labour Party', 'Conservative Party'])
     
-    
-    
+   

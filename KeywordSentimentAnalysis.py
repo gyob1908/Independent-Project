@@ -14,7 +14,7 @@ import tweepy
 import AccessKeys
 from textblob import TextBlob
 
-# Uses keys from APP setup to access Twitter Account information
+# Uses keys from API setup to access Twitter Account information
 # Access Keys held in seperate folder
 
 auth = tweepy.OAuthHandler(AccessKeys.ConsumerKey, AccessKeys.ConsumerSecret)
