@@ -138,6 +138,6 @@ if __name__ == '__main__':
 
     # Filters the stream for these keywords
     
-    stream.filter(track=['Labour Party', 'Conservative Party'])
+    stream.filter(track=['Buhari, Donald Duke'])
     
    
